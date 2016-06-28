@@ -1,4 +1,4 @@
-require 'oily_png'
+require "oily_png"
 
 class Image < ChunkyPNG::Image
   def initialize(height, width)

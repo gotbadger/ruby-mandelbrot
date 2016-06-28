@@ -6,3 +6,4 @@ gem "pry"
 
 # gem "chunky_png"
 gem "oily_png"
+gem "byebug"
