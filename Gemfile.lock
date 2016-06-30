@@ -8,6 +8,7 @@ GEM
     method_source (0.8.2)
     oily_png (1.2.0)
       chunky_png (~> 1.3.1)
+    perlin_noise (0.1.2)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -21,6 +22,7 @@ DEPENDENCIES
   byebug
   colorize
   oily_png
+  perlin_noise
   pry
 
 BUNDLED WITH

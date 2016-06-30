@@ -5,19 +5,23 @@ class Rainbow
 
   def initialize(size)
     @size = size
-    @colors = Array.new(size).each_with_index.map do |_,i|
+    @colors = rainbow
+  end
+
+  def at(index)
+    @colors[index]
+  end
+
+  private
+
+  def rainbow
+    Array.new(size).each_with_index.map do |_,i|
       red =   sin_to_hex(i, 0 * Math::PI * 2/3); # 0 deg
       blue =  sin_to_hex(i, 1 * Math::PI * 2/3); # 120 deg
       green = sin_to_hex(i, 2 * Math::PI * 2/3); # 240 deg
       "##{red}#{green}#{blue}"
     end
   end
-
-  def at(index)
-    colors[index]
-  end
-
-  private
 
   # port of http://nikolay.rocks/2015-10-29-rainbows-generator-in-javascript
   def sin_to_hex(i, phase)
