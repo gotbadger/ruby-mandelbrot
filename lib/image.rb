@@ -2,7 +2,7 @@ require "oily_png"
 
 class Image < ChunkyPNG::Image
   def initialize(height, width)
-    super(width, height, ChunkyPNG::Color::TRANSPARENT)
+    super(width, height, ChunkyPNG::Color::BLACK)
   end
 
   def write_to_iterm

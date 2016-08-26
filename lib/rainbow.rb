@@ -3,7 +3,7 @@ class Rainbow
   attr_accessor :size
   attr_accessor :colors
 
-  def initialize(size)
+  def initialize(size, base_colours = [])
     @size = size
     @colors = rainbow
   end
@@ -13,6 +13,23 @@ class Rainbow
   end
 
   private
+
+  def colours_between(first, last, count)
+    # http://stackoverflow.com/questions/14482226/how-can-i-get-the-color-halfway-between-two-colors
+  end
+
+  def string_to_hex(value)
+    value = value[1..-1] if value.length > 6
+    [
+      extract_from(value, 0, 1),
+      extract_from(value, 2, 3),
+      extract_from(value, 4, 5)
+    ]
+  end
+
+  def extract_from(str, at_1, at_2)
+    "#{str[0]}#{str[1]}".to_i(16)
+  end
 
   def rainbow
     Array.new(size).each_with_index.map do |_,i|

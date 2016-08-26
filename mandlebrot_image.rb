@@ -25,7 +25,7 @@ class MandelbrotImage
   def draw
     png =   Image.new(grid_x.count, grid_y.count)
     mandelbrot = Mandelbrot.new(@max_iterations)
-
+    puts "#{grid_x.count}, #{grid_y.count}"
     grid_y.each_with_index do |y, yn|
       grid_x.each_with_index do |x, xn|
         _, itr = mandelbrot.calculate(x, y)
@@ -46,4 +46,6 @@ class MandelbrotImage
 end
 
 MandelbrotImage.new([-2.0,1.0], [-1.5, 1.5], 0.003, 20).draw
+# MandelbrotImage.new([-2.0,1.0], [-1.5, 1.5], 0.0009, 30).draw
 # MandelbrotImage.new([-1.08, -1.0], [0.3, 0.40],  0.0001, 30).draw
+# MandelbrotImage.new([-1.08, -1.0], [0.3, 0.40],  0.00007, 30).draw
